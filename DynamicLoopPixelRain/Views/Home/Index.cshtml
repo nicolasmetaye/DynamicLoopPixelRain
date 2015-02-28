@@ -1,0 +1,44 @@
+﻿<div ng-app="pixelRainApp">
+    <div id="game_board" ng-controller="blocksController">
+        <div class="blockLetterContainer" ng-repeat="block in blocks" ng-style="
+             { 
+                left: ( block.position.left + 'px' ), 
+                top: ( block.position.top + 'px' ) 
+             }
+             ">
+            <p class="blockLetter">{{ block.letter }}</p>
+        </div>
+    </div>
+    <button onclick="addLetter()">Try it</button>
+</div>
+
+<script>
+    
+    var app = angular.module('pixelRainApp', []);
+
+    app.controller('blocksController', function blocksController($scope) {
+        $scope.blocks = [
+            {
+                letter: 'B',
+                position: {
+                    top: 10,
+                    left: 20
+                }
+            },
+            {
+                letter: 'C',
+                position: {
+                    top: 50,
+                    left: 100
+                }
+            }
+        ];
+    });
+
+    function addLetter() {
+        var scope = angular.element($("#game_board")).scope();
+        scope.blocks[scope.blocks.length] = { letter: 'A', position: { top: 200, left: 200 } };
+        scope.$apply();
+    }
+
+</script>

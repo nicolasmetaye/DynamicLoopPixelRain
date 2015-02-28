@@ -1,0 +1,48 @@
+﻿@font-face {
+    font-family: 'letterDropFont';
+    src: url('../fonts/letter-drop-font-webfont.eot');
+    src: url('../fonts/letter-drop-font-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/letter-drop-font-webfont.woff2') format('woff2'),
+         url('../fonts/letter-drop-font-webfont.woff') format('woff'),
+         url('../fonts/letter-drop-font-webfont.ttf') format('truetype'),
+         url('../fonts/letter-drop-font-webfont.svg#8bit_wondernominal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	background-image: url("images/background.jpg");
+}
+
+.blockLetterContainer
+{
+    position: absolute;
+	display: inline-block;
+	border-style: dotted;
+	border-width: 2px;
+	border-color: #00C9EC;
+	box-shadow: 0 0 8px #00C9EC;
+	background-color: #0D3C5A;
+}
+
+.blockLetter
+{
+	font-family: letterDropFont;
+	color: #00C9EC;	
+	margin: -2px 1px 1px 4px;
+}
+
+
+#game_board
+{
+    position: relative;
+	margin: 100px auto;
+	width: 700px;
+	height: 500px;
+	background-color: #000000;
+	border-top: 3px dashed #ECE65C;
+	border-left: 3px solid #ECE65C;
+	border-right: 3px solid #ECE65C;
+	border-bottom: 3px solid #ECE65C;
+	border-radius: 6px;
+}
