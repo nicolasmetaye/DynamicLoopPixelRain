@@ -1,0 +1,14 @@
+﻿<div ng-controller="blocksController">
+    <div ng-repeat="block in blocks" class="blockContainer {{ block.hasShadow ? 'blockShadow' : '' }}" ng-style="
+          {
+                left: ( block.position.left + 'px' ),
+                top: ( block.position.top + 'px' ),
+                opacity : block.opacity,
+                height: ( block.heightContainer + 'px' )
+          }
+         ">
+        <div class="blockBorder">
+            <p class="blockLetter">{{ block.letter }}</p>
+        </div>
+    </div>
+</div>

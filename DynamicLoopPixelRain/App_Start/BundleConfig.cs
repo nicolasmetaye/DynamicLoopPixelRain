@@ -22,6 +22,11 @@ namespace DynamicLoopPixelRain
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/app")
+                .Include("~/app/app.module.js")
+                .IncludeDirectory("~/app/shared/", "*.js", true)
+                .IncludeDirectory("~/app/components/", "*.js", true));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/styles.css"));

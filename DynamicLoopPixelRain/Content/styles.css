@@ -14,15 +14,33 @@ body {
 	background-image: url("images/background.jpg");
 }
 
-.blockLetterContainer
+.menu
+{
+    position: relative;
+    margin: 0 auto;
+    width: 60px;
+}
+
+.blockContainer
 {
     position: absolute;
 	display: inline-block;
+    overflow: hidden;
+}
+
+.blockBorder
+{
+    width: 23px;
+    height: 22px;
 	border-style: dotted;
 	border-width: 2px;
 	border-color: #00C9EC;
-	box-shadow: 0 0 8px #00C9EC;
 	background-color: #0D3C5A;
+}
+
+.blockShadow
+{
+	box-shadow: 0 0 8px #00C9EC;
 }
 
 .blockLetter
@@ -30,13 +48,14 @@ body {
 	font-family: letterDropFont;
 	color: #00C9EC;	
 	margin: -2px 1px 1px 4px;
+    text-align: center;
 }
 
 
 #game_board
 {
     position: relative;
-	margin: 100px auto;
+	margin: 100px auto 20px auto;
 	width: 700px;
 	height: 500px;
 	background-color: #000000;
@@ -45,4 +64,5 @@ body {
 	border-right: 3px solid #ECE65C;
 	border-bottom: 3px solid #ECE65C;
 	border-radius: 6px;
+    overflow: hidden;
 }

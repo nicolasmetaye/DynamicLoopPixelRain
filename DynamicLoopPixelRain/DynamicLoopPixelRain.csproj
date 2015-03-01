@@ -174,6 +174,17 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.module.js" />
+    <Content Include="app\components\blocks\blockModel.js" />
+    <Content Include="app\components\blocks\blocksController.js" />
+    <Content Include="app\components\blocks\blocksDirective.js" />
+    <Content Include="app\components\blocks\blocksService.js" />
+    <Content Include="app\components\blocks\blocksView.html" />
+    <Content Include="app\components\main\mainController.js" />
+    <Content Include="app\components\main\mainDirective.js" />
+    <Content Include="app\components\main\mainView.html" />
+    <Content Include="app\shared\events\eventsService.js" />
+    <Content Include="app\shared\game\gameService.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\background.jpg" />
@@ -220,6 +231,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\components\bombs\" />
+    <Folder Include="app\components\hearts\" />
+    <Folder Include="app\components\score\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
