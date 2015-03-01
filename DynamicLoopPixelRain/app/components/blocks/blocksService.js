@@ -1,35 +1,30 @@
 ﻿angular.module("pixelRainApp.services").factory("blocksService",
-    function ($http) {
-        return new BlocksService($http);
+    function ($http, gameService) {
+        return new BlocksService($http, gameService);
     }
 );
 
-function BlocksService($http) {
+function BlocksService($http, gameService) {
 
     var getBlockWithTrace = function (top, left, letter, speed) {
-        var separatorDistance = (speed * 0.7) + 8;
+        var height = 23;
+        var separatorDistance = Math.floor(speed * 0.85) + 8;
         return [
             new BlockModel(letter, (top - (separatorDistance * 4)), left, 0.1, false, separatorDistance),
             new BlockModel(letter, (top - (separatorDistance * 3)), left, 0.2, false, separatorDistance),
             new BlockModel(letter, (top - (separatorDistance * 2)), left, 0.4, false, separatorDistance),
             new BlockModel(letter, (top - separatorDistance), left, 0.6, false, separatorDistance),
-            new BlockModel(letter, top, left, 1, true, 22)
+            new BlockModel(letter, top, left, 1, true, height)
         ];
     };
 
     this.getUpdatedBlocks = function () {
+        var blockStates = gameService.getCurrentBlockStates();
         var blocks = [];
-
-        blocks = blocks.concat(getBlockWithTrace(60, 20, 'A', 1));
-        blocks = blocks.concat(getBlockWithTrace(110, 100, 'B', 3));
-        blocks = blocks.concat(getBlockWithTrace(80, 150, 'C', 8));
-        blocks = blocks.concat(getBlockWithTrace(150, 170, 'D', 10));
-        blocks = blocks.concat(getBlockWithTrace(200, 190, 'E', 6));
-        blocks = blocks.concat(getBlockWithTrace(20, 230, 'F', 7));
-        blocks = blocks.concat(getBlockWithTrace(220, 250, 'G', 2));
-        blocks = blocks.concat(getBlockWithTrace(300, 290, 'H', 8));
-        blocks = blocks.concat(getBlockWithTrace(90, 320, 'I', 2));
-
+        for (var index = 0; index < blockStates.length; index++) {
+            var blockState = blockStates[index];
+            blocks = blocks.concat(getBlockWithTrace(blockState.position.top, blockState.position.left, blockState.letter, blockState.speed));
+        }
         return blocks;
     };
 }

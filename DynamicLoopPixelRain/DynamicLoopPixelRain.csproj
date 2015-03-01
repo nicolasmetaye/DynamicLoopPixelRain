@@ -184,6 +184,7 @@
     <Content Include="app\components\main\mainDirective.js" />
     <Content Include="app\components\main\mainView.html" />
     <Content Include="app\shared\events\eventsService.js" />
+    <Content Include="app\shared\game\blockStateModel.js" />
     <Content Include="app\shared\game\gameService.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
