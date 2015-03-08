@@ -3,7 +3,9 @@
         $scope.blocks = [];
 
         $scope.$on('displayBlocksBroadcast', function () {
-            $scope.blocks = blocksService.getUpdatedBlocks();
+            $scope.$apply(function () {
+                $scope.blocks = blocksService.getUpdatedBlocks();
+            });
         });
     }
 );

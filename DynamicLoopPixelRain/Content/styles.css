@@ -1,13 +1,26 @@
 ﻿@font-face {
-    font-family: 'letterDropFont';
-    src: url('../fonts/letter-drop-font-webfont.eot');
-    src: url('../fonts/letter-drop-font-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/letter-drop-font-webfont.woff2') format('woff2'),
-         url('../fonts/letter-drop-font-webfont.woff') format('woff'),
-         url('../fonts/letter-drop-font-webfont.ttf') format('truetype'),
-         url('../fonts/letter-drop-font-webfont.svg#8bit_wondernominal') format('svg');
+    font-family: 'pixelFont';
+    src: url('../fonts/pixel-webfont.eot');
+    src: url('../fonts/pixel-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pixel-webfont.woff2') format('woff2'),
+         url('../fonts/pixel-webfont.woff') format('woff'),
+         url('../fonts/pixel-webfont.ttf') format('truetype'),
+         url('../fonts/pixel-webfont.svg#8bit_wondernominal') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'letterDropFont';
+    src: url('../fonts/letter-drop-webfont.eot');
+    src: url('../fonts/letter-drop-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/letter-drop-webfont.woff2') format('woff2'),
+         url('../fonts/letter-drop-webfont.woff') format('woff'),
+         url('../fonts/letter-drop-webfont.ttf') format('truetype'),
+         url('../fonts/letter-drop-webfont.svg#press_start_2pregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 body {
@@ -34,23 +47,126 @@ body {
     height: 23px;
 	border-style: dotted;
 	border-width: 2px;
+}
+
+.blockBorder.blue
+{
 	border-color: #00C9EC;
 	background-color: #0D3C5A;
 }
 
-.blockShadow
+.blockShadow.blue
 {
 	box-shadow: 0 0 8px #00C9EC;
+}
+
+.blockLetter.blue
+{
+	color: #00C9EC;	
+}
+
+.blockBorder.green
+{
+	border-color: #50CB2D;
+	background-color: #344803;
+}
+
+.blockShadow.green
+{
+	box-shadow: 0 0 8px #50CB2D;
+}
+
+.blockLetter.green
+{
+	color: #50CB2D;	
+}
+
+.blockBorder.orange
+{
+	border-color: #FD8842;
+	background-color: #43281D;
+}
+
+.blockShadow.orange
+{
+	box-shadow: 0 0 8px #FD8842;
+}
+
+.blockLetter.orange
+{
+	color: #FD8842;	
+}
+
+.blockBorder.white
+{
+	border-color: #EFEDEE;
+	background-color: #515153;
+}
+
+.blockShadow.white
+{
+	box-shadow: 0 0 8px #EFEDEE;
+}
+
+.blockLetter.white
+{
+	color: #EFEDEE;	
+}
+
+.blockBorder.purple
+{
+	border-color: #DF69AC;
+	background-color: #5B3244;
+}
+
+.blockShadow.purple
+{
+	box-shadow: 0 0 8px #DF69AC;
+}
+
+.blockLetter.purple
+{
+	color: #DF69AC;	
+}
+
+.blockBorder.red
+{
+	border-color: #FD4559;
+	background-color: #471515;
+}
+
+.blockShadow.red
+{
+	box-shadow: 0 0 8px #FD4559;
+}
+
+.blockLetter.red
+{
+	color: #FD4559;	
+}
+
+.blockBorder.yellow
+{
+	border-color: #F8E078;
+	background-color: #60561B;
+}
+
+.blockShadow.yellow
+{
+	box-shadow: 0 0 8px #F8E078;
+}
+
+.blockLetter.yellow
+{
+	color: #F8E078;	
 }
 
 .blockLetter
 {
 	font-family: letterDropFont;
-	color: #00C9EC;	
-	margin: -1px 0 0 1px;
+	margin: 1px 0 0 1px;
     text-align: center;
 }
-
 
 #game_board
 {

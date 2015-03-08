@@ -6,15 +6,15 @@
 
 function BlocksService($http, gameService) {
 
-    var getBlockWithTrace = function (top, left, letter, speed) {
+    var getBlockWithTrace = function (top, left, letter, speed, color) {
         var height = 23;
         var separatorDistance = Math.floor(speed * 0.85) + 8;
         return [
-            new BlockModel(letter, (top - (separatorDistance * 4)), left, 0.1, false, separatorDistance),
-            new BlockModel(letter, (top - (separatorDistance * 3)), left, 0.2, false, separatorDistance),
-            new BlockModel(letter, (top - (separatorDistance * 2)), left, 0.4, false, separatorDistance),
-            new BlockModel(letter, (top - separatorDistance), left, 0.6, false, separatorDistance),
-            new BlockModel(letter, top, left, 1, true, height)
+            new BlockModel(letter, (top - (separatorDistance * 4)), left, 0.1, false, separatorDistance, color),
+            new BlockModel(letter, (top - (separatorDistance * 3)), left, 0.2, false, separatorDistance, color),
+            new BlockModel(letter, (top - (separatorDistance * 2)), left, 0.4, false, separatorDistance, color),
+            new BlockModel(letter, (top - separatorDistance), left, 0.6, false, separatorDistance, color),
+            new BlockModel(letter, top, left, 1, true, height, color)
         ];
     };
 
@@ -23,7 +23,7 @@ function BlocksService($http, gameService) {
         var blocks = [];
         for (var index = 0; index < blockStates.length; index++) {
             var blockState = blockStates[index];
-            blocks = blocks.concat(getBlockWithTrace(blockState.position.top, blockState.position.left, blockState.letter, blockState.speed));
+            blocks = blocks.concat(getBlockWithTrace(blockState.position.top, blockState.position.left, blockState.letter, blockState.speed, blockState.color));
         }
         return blocks;
     };
