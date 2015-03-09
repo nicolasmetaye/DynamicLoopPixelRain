@@ -84,6 +84,19 @@ function GameService() {
         blockIntervals = [];
     }
 
+    this.removeBlocks = function (blockLetter) {
+        var blocksToRemove = [];
+        for (var index = 0; index < blockStates.length; index++) {
+            var blockState = blockStates[index];
+            if (blockState.letter.toUpperCase() === blockLetter.toUpperCase()) {
+                blocksToRemove[blocksToRemove.length] = blockState;
+            }
+        }
+        for (var indexToRemove = 0; indexToRemove < blocksToRemove.length; indexToRemove++) {
+            this.removeBlock(blocksToRemove[indexToRemove].blockId);
+        }
+    }
+
     this.removeBlock = function (blockId) {
         var blockStateIndex = getBlockStateIndex(blockId);
         if (blockStateIndex > -1) {
