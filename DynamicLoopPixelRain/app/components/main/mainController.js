@@ -2,17 +2,33 @@
     function mainController($scope, $document, $interval, eventsService, gameService) {
         var displayFrameInterval;
         var addBlockInterval;
+        var frameMilliseconds = 60;
 
-        $scope.startGameClick = function () {
-            if (displayFrameInterval) return;
+        var setUpAddBlockInterval = function () {
+            if (addBlockInterval) {
+                window.clearInterval(addBlockInterval);
+            }
+            addBlockInterval = setInterval(function () {
+                var oldLevel = gameService.getLevel();
+                gameService.addBlock();
+                var newLevel = gameService.getLevel();
+                if (oldLevel !== newLevel) {
+                    setUpAddBlockInterval();
+                }
+            }, gameService.getBlockIntervalSpeed());
+        };
 
+        var setUpDisplayFrameInterval = function () {
+            if (displayFrameInterval)
+                return;
             displayFrameInterval = setInterval(function () {
                 eventsService.displayBlocks();
-            }, 60);
+            }, frameMilliseconds);
+        };
 
-            addBlockInterval = setInterval(function () {
-                gameService.addBlock();
-            }, 400);
+        $scope.startGameClick = function () {
+            setUpDisplayFrameInterval();
+            setUpAddBlockInterval();
         };
 
         $scope.stopGameClick = function () {

@@ -11,6 +11,8 @@ function GameService() {
     var blockStates = [];
     var blockIntervals = [];
     var maxId = 0;
+    var level = 1;
+    var blocksCreated = 0;
 
     var getRandomNumber = function (minimum, maximum) {
         return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
@@ -59,6 +61,10 @@ function GameService() {
             self.updateBlock(blockId);
         }, GameService.basicFrameSpeed);
         blockIntervals.push(new BlockInterval(blockId, blockInterval));
+        blocksCreated++;
+        if (blocksCreated % GameService.blocksPerLevel === 0) {
+            level++;
+        }
     }
 
     this.updateBlock = function (blockId) {
@@ -109,8 +115,19 @@ function GameService() {
             blockIntervals.splice(blockIntervalIndex, 1);
         }
     }
+
+    this.getLevel = function() {
+        return level;
+    }
+
+    this.getBlockIntervalSpeed = function () {
+        return GameService.blockIntervalSpeedOriginal - (level * GameService.blockIntervalSpeedPerLevel);
+    }
 }
 
+GameService.blockIntervalSpeedPerLevel = 100;
+GameService.blockIntervalSpeedOriginal = 1600;
+GameService.blocksPerLevel = 30;
 GameService.minimumSpeedIncrease = 1;
 GameService.speedIncreaseRatio = 0.4;
 GameService.basicFrameSpeed = 60;
