@@ -1,0 +1,14 @@
+﻿<div ng-controller="explodedBlocksController">
+
+    
+
+    <div ng-repeat="explodedBlock in explodedBlocks" class="explodedBlockContainer" ng-style="
+          {
+                left: ( explodedBlock.position.left + 'px' ),
+                top: ( explodedBlock.position.top + 'px' ),
+                opacity : explodedBlock.opacity
+          }
+         ">
+        <img alt="" title="" src="/Content/images/explosion.png" class="explodedBlockImage" />
+    </div>
+</div>

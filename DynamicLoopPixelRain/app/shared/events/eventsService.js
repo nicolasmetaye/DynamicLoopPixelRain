@@ -8,4 +8,8 @@ function EventsService($rootScope) {
     this.displayBlocks = function () {
         $rootScope.$broadcast('displayBlocksBroadcast');
     };
+
+    this.displayExplodedBlocks = function () {
+        $rootScope.$broadcast('displayExplodedBlocksBroadcast');
+    };
 }

@@ -23,6 +23,7 @@
                 return;
             displayFrameInterval = setInterval(function () {
                 eventsService.displayBlocks();
+                eventsService.displayExplodedBlocks();
             }, frameMilliseconds);
         };
 
@@ -40,16 +41,16 @@
                 window.clearInterval(addBlockInterval);
                 addBlockInterval = undefined;
             }
-            gameService.removeAllBlocks();
+            gameService.clear();
         };
 
         $scope.$on('$destroy', function () {
             $scope.stopGameClick();
-            gameService.removeAllBlocks();
+            gameService.clear();
         });
 
         $document.bind('keypress', function (e) {
-            gameService.removeBlocks(String.fromCharCode(e.which));
+            gameService.explodeBlocks(String.fromCharCode(e.which));
         });
     }
 );
