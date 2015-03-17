@@ -12,4 +12,12 @@ function EventsService($rootScope) {
     this.displayExplodedBlocks = function () {
         $rootScope.$broadcast('displayExplodedBlocksBroadcast');
     };
+
+    this.displayLevel = function () {
+        $rootScope.$broadcast('displayLevelBroadcast');
+    };
+
+    this.updateLevel = function () {
+        $rootScope.$broadcast('updateLevelBroadcast');
+    };
 }

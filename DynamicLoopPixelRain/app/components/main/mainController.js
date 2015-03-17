@@ -28,6 +28,7 @@
         };
 
         $scope.startGameClick = function () {
+            eventsService.updateLevel();
             setUpDisplayFrameInterval();
             setUpAddBlockInterval();
         };

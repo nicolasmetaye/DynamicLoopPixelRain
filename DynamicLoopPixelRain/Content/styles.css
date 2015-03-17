@@ -23,6 +23,19 @@
 
 }
 
+@font-face {
+    font-family: 'abstractregular';
+    src: url('../fonts/ABSTRACT-webfont.eot');
+    src: url('../fonts/ABSTRACT-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ABSTRACT-webfont.woff2') format('woff2'),
+         url('../fonts/ABSTRACT-webfont.woff') format('woff'),
+         url('../fonts/ABSTRACT-webfont.ttf') format('truetype'),
+         url('../fonts/ABSTRACT-webfont.svg#abstractregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
 	background-image: url("images/background.jpg");
 }
@@ -182,12 +195,42 @@ body {
     max-height: 100%;
 }
 
-#game_board
+.level
+{
+    font-family: abstractregular;
+    color: #EFEDEE;
+    font-size: 10px;
+    text-align: right;
+    margin: 20px;
+}
+
+#game_container
 {
     position: relative;
 	margin: 100px auto 20px auto;
+	width: 1200px;
+	height: 500px;
+}
+
+#game_info_left
+{
+	width: 250px;
+	height: 500px;
+    float: left;
+}
+
+#game_info_right
+{
+	width: 250px;
+	height: 500px;
+    float: right;
+}
+
+#game_board
+{
 	width: 700px;
 	height: 500px;
+    position: relative;
 	background-color: #000000;
 	border-top: 3px dashed #ECE65C;
 	border-left: 3px solid #ECE65C;
@@ -196,3 +239,4 @@ body {
 	border-radius: 6px;
     overflow: hidden;
 }
+
