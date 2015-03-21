@@ -1,0 +1,14 @@
+﻿<div ng-controller="hitsController">
+    <div class="hits" ng-style="
+         {
+                visibility: (hits === 0 ? 'hidden' : '')
+          }
+         ">
+        <div class="hitsLabel">
+            Hits
+        </div>
+        <div class="hitsNumber">
+            {{hits}}
+        </div>
+    </div>
+</div>

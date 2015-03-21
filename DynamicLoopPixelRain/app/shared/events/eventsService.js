@@ -6,18 +6,26 @@
 
 function EventsService($rootScope) {
     this.displayBlocks = function () {
-        $rootScope.$broadcast('displayBlocksBroadcast');
+        $rootScope.$broadcast('displayBlocksApplyBroadcast');
     };
 
-    this.displayExplodedBlocks = function () {
-        $rootScope.$broadcast('displayExplodedBlocksBroadcast');
+    this.displayLevel = function (apply) {
+        if (apply) {
+            $rootScope.$broadcast('displayLevelApplyBroadcast');
+        } else {
+            $rootScope.$broadcast('displayLevelBroadcast');
+        }
     };
 
-    this.displayLevel = function () {
-        $rootScope.$broadcast('displayLevelBroadcast');
+    this.displayScore = function (apply) {
+        if (apply) {
+            $rootScope.$broadcast('displayScoreApplyBroadcast');
+        } else {
+            $rootScope.$broadcast('displayScoreBroadcast');
+        }
     };
 
-    this.updateLevel = function () {
-        $rootScope.$broadcast('updateLevelBroadcast');
+    this.displayHits = function () {
+        $rootScope.$broadcast('displayHitsApplyBroadcast');
     };
 }

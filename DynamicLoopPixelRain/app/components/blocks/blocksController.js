@@ -2,7 +2,7 @@
     function blocksController($scope, blocksService) {
         $scope.blocks = [];
 
-        $scope.$on('displayBlocksBroadcast', function () {
+        $scope.$on('displayBlocksApplyBroadcast', function () {
             $scope.$apply(function () {
                 $scope.blocks = blocksService.getUpdatedBlocks();
             });

@@ -2,7 +2,7 @@
     function explodedBlocksController($scope, explodedBlocksService) {
         $scope.explodedBlocks = [];
 
-        $scope.$on('displayExplodedBlocksBroadcast', function () {
+        $scope.$on('displayBlocksApplyBroadcast', function () {
             $scope.$apply(function () {
                 $scope.explodedBlocks = explodedBlocksService.getUpdatedExplodedBlocks();
             });

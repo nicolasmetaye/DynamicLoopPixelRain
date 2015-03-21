@@ -185,13 +185,18 @@
     <Content Include="app\components\explodedBlocks\explodedBlocksDirective.js" />
     <Content Include="app\components\explodedBlocks\explodedBlocksService.js" />
     <Content Include="app\components\explodedBlocks\explodedBlocksView.html" />
-    <Content Include="app\components\level\levelModel.js" />
+    <Content Include="app\components\hits\hitsController.js" />
+    <Content Include="app\components\hits\hitsDirective.js" />
+    <Content Include="app\components\hits\hitsView.html" />
     <Content Include="app\components\level\levelController.js" />
     <Content Include="app\components\level\levelDirective.js" />
     <Content Include="app\components\level\levelView.html" />
     <Content Include="app\components\main\mainController.js" />
     <Content Include="app\components\main\mainDirective.js" />
     <Content Include="app\components\main\mainView.html" />
+    <Content Include="app\components\score\scoreController.js" />
+    <Content Include="app\components\score\scoreDirective.js" />
+    <Content Include="app\components\score\scoreView.html" />
     <Content Include="app\shared\events\eventsService.js" />
     <Content Include="app\shared\blockStates\blockInterval.js" />
     <Content Include="app\shared\explodedBlockStates\explodedBlockStateModel.js" />
@@ -199,7 +204,9 @@
     <Content Include="app\shared\blockStates\blockStatesService.js" />
     <Content Include="app\shared\explodedBlockStates\explodedBlockStatesService.js" />
     <Content Include="app\shared\game\gameService.js" />
+    <Content Include="app\shared\hits\hitsService.js" />
     <Content Include="app\shared\level\levelService.js" />
+    <Content Include="app\shared\score\scoreService.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\background.jpg" />
@@ -259,7 +266,6 @@
   <ItemGroup>
     <Folder Include="app\components\bombs\" />
     <Folder Include="app\components\hearts\" />
-    <Folder Include="app\components\score\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>

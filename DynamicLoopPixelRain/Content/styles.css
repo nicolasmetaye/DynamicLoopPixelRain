@@ -44,7 +44,8 @@ body {
 {
     position: relative;
     margin: 0 auto;
-    width: 60px;
+    width: 200px;
+    text-align: center;
 }
 
 .blockContainer
@@ -195,13 +196,44 @@ body {
     max-height: 100%;
 }
 
-.level
+.level, .score, .hits
 {
     font-family: abstractregular;
     color: #EFEDEE;
     font-size: 10px;
-    text-align: right;
-    margin: 20px;
+}
+
+.score, .hits
+{
+    margin: 20px 8px 0 0;
+}
+
+.level 
+{
+    margin: 410px 8px 0 0;
+}
+
+.levelLabel, .levelNumber, .hitsLabel, .hitsNumber, .score
+{
+    float:right; 
+}
+
+.hitsNumber {
+    margin-right: 10px;
+}
+
+.levelNumber
+{
+    width:42px;
+    text-align:right;    
+}
+
+.menuLabel 
+{
+    font-family: abstractregular;
+    color: #00C9EC;
+    font-size: 8px;
+    cursor: pointer;
 }
 
 #game_container

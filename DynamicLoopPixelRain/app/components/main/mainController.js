@@ -1,17 +1,18 @@
 ﻿angular.module("pixelRainApp.controllers").controller("mainController",
-    function mainController($scope, $document, $interval, eventsService, gameService) {
+    function mainController($scope, $document, $interval, eventsService, gameService, levelService, scoreService) {
         var displayFrameInterval;
         var addBlockInterval;
-        var frameMilliseconds = 60;
+        var frameMilliseconds = 100;
+        $scope.displayStart = true;
 
         var setUpAddBlockInterval = function () {
             if (addBlockInterval) {
                 window.clearInterval(addBlockInterval);
             }
             addBlockInterval = setInterval(function () {
-                var oldLevel = gameService.getLevel();
+                var oldLevel = levelService.getLevel();
                 gameService.addBlock();
-                var newLevel = gameService.getLevel();
+                var newLevel = levelService.getLevel();
                 if (oldLevel !== newLevel) {
                     setUpAddBlockInterval();
                 }
@@ -23,14 +24,17 @@
                 return;
             displayFrameInterval = setInterval(function () {
                 eventsService.displayBlocks();
-                eventsService.displayExplodedBlocks();
             }, frameMilliseconds);
         };
 
         $scope.startGameClick = function () {
-            eventsService.updateLevel();
+            levelService.setLevel(1);
+            scoreService.setScore(0);
+            eventsService.displayLevel(false);
+            eventsService.displayScore(false);
             setUpDisplayFrameInterval();
             setUpAddBlockInterval();
+            $scope.displayStart = false;
         };
 
         $scope.stopGameClick = function () {
@@ -43,6 +47,7 @@
                 addBlockInterval = undefined;
             }
             gameService.clear();
+            $scope.displayStart = true;
         };
 
         $scope.$on('$destroy', function () {

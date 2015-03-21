@@ -19,7 +19,7 @@ function LevelService(eventsService) {
     {
         if (level < 10 && blocksCreated % LevelService.blocksPerLevel === 0) {
             level++;
-            eventsService.displayLevel();
+            eventsService.displayLevel(true);
         }
     }    
 }

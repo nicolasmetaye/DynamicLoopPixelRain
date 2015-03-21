@@ -1,15 +1,15 @@
 ﻿angular.module("pixelRainApp.controllers").controller("levelController",
-    function levelController($scope, gameService) {
-        $scope.levelNumber = 0;
+    function levelController($scope, levelService) {
+        $scope.levelNumber = levelService.getLevel();
 
-        $scope.$on('displayLevelBroadcast', function () {
+        $scope.$on('displayLevelApplyBroadcast', function () {
             $scope.$apply(function () {
-                $scope.levelNumber = gameService.getLevel();
+                $scope.levelNumber = levelService.getLevel();
             });
         });
 
-        $scope.$on('updateLevelBroadcast', function () {
-            $scope.levelNumber = gameService.getLevel();
+        $scope.$on('displayLevelBroadcast', function () {
+            $scope.levelNumber = levelService.getLevel();
         });
     }
 );
