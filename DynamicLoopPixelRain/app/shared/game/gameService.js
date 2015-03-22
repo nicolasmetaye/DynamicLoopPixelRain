@@ -44,5 +44,5 @@ function GameService(blockStatesService, explodedBlockStatesService, levelServic
     }
 }
 
-GameService.blockIntervalSpeedPerLevel = 90;
-GameService.blockIntervalSpeedOriginal = 1600;
+GameService.blockIntervalSpeedPerLevel = 100;
+GameService.blockIntervalSpeedOriginal = 1400;

@@ -11,7 +11,6 @@ function BlockStatesService(levelService) {
     var blockStates = [];
     var blockIntervals = [];
     var maxId = 0;
-    var blocksCreated = 0;
   
     var getRandomNumber = function (minimum, maximum) {
         return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
@@ -63,8 +62,7 @@ function BlockStatesService(levelService) {
             self.updateBlock(blockId);
         }, BlockStatesService.blockIntervalSpeed);
         blockIntervals.push(new BlockInterval(blockId, blockInterval));
-        blocksCreated++;
-        levelService.updateLevel(blocksCreated);
+        levelService.updateLevel();
     }
 
     this.updateBlock = function (blockId) {

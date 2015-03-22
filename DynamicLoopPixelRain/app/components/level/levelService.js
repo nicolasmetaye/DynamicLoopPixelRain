@@ -6,6 +6,7 @@
 
 function LevelService(eventsService) {
     var level = 1;
+    var blocksCreated = 0;
 
     this.getLevel = function () {
         return level;
@@ -13,16 +14,19 @@ function LevelService(eventsService) {
 
     this.setLevel = function (newLevel) {
         level = newLevel;
+        blocksCreated = 0;
     }
 
-    this.updateLevel = function(blocksCreated)
-    {
-        if (level < 10 && blocksCreated % LevelService.blocksPerLevel === 0) {
+    this.updateLevel = function() {
+        blocksCreated++;
+        if (level < 10 && blocksCreated === LevelService.minimumblocksPerLevel + (level * LevelService.blockIncreasePerLevel)) {
             level++;
+            blocksCreated = 0;
             eventsService.displayLevel(true);
         }
     }    
 }
 
+LevelService.blockIncreasePerLevel = 5;
 LevelService.maximumLevel = 10;
-LevelService.blocksPerLevel = 15;
+LevelService.minimumblocksPerLevel = 20;

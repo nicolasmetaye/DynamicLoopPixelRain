@@ -85,10 +85,10 @@ function HitsService(eventsService) {
     this.resetHits();
 }
 
-HitsService.hitsKeepAliveTime = 800;
-HitsService.hitsStartFadingTime = 600;
+HitsService.hitsKeepAliveTime = 1000;
+HitsService.hitsStartFadingTime = 700;
 HitsService.fadeHitsIntervalSpeed = 50;
-HitsService.fadeHitsOpacityDecrease = 0.25;
+HitsService.fadeHitsOpacityDecrease = 0.15;
 HitsService.hitsNumberContainerTopOffset = 25;
 HitsService.hitsNumberContainerLeftOffset = 5;
 HitsService.hitsNumberTopMinimum = 0;

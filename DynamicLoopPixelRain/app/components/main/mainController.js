@@ -4,6 +4,7 @@
         var addBlockInterval;
         var frameMilliseconds = 100;
         $scope.displayStart = true;
+        $scope.displayLevelChoice = false;
 
         var setUpAddBlockInterval = function () {
             if (addBlockInterval) {
@@ -28,13 +29,18 @@
         };
 
         $scope.startGameClick = function () {
-            levelService.setLevel(1);
+            $scope.displayStart = false;
+            $scope.displayLevelChoice = true;
+        };
+
+        $scope.startGameLevelClick = function (level) {
+            $scope.displayLevelChoice = false;
+            levelService.setLevel(level);
             scoreService.setScore(0);
             eventsService.displayLevel(false);
             eventsService.displayScore(false);
             setUpDisplayFrameInterval();
-            setUpAddBlockInterval();
-            $scope.displayStart = false;
+            setUpAddBlockInterval();;
         };
 
         $scope.stopGameClick = function () {
@@ -48,6 +54,7 @@
             }
             gameService.clear();
             $scope.displayStart = true;
+            $scope.displayLevelChoice = false;
         };
 
         $scope.$on('$destroy', function () {
