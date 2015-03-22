@@ -1,4 +1,14 @@
 ﻿<div ng-controller="mainController">
-    <div ng-show="displayStart" ng-click="startGameClick();" class="menuLabel">START</div>
-    <div ng-show="!displayStart" ng-click="stopGameClick();" class="menuLabel">STOP</div>
+    <div ng-show="displayStart" ng-click="startGameClick();" class="menuContainer">
+        <div class="menuFontFixer"></div>
+        <div class="menuLabel">
+            START
+        </div>
+    </div>
+    <div ng-show="!displayStart" ng-click="stopGameClick();" class="menuContainer">
+        <div class="menuFontFixer"></div>
+        <div class="menuLabel">
+            STOP
+        </div>
+    </div>
 </div>

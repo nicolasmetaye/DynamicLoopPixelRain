@@ -1,10 +1,10 @@
 ﻿angular.module("pixelRainApp.services").factory("gameService",
-    function (blockStatesService, explodedBlockStatesService, levelService, hitsService, scoreService) {
-        return new GameService(blockStatesService, explodedBlockStatesService, levelService, hitsService, scoreService);
+    function (blockStatesService, explodedBlockStatesService, levelService, scoreService) {
+        return new GameService(blockStatesService, explodedBlockStatesService, levelService, scoreService);
     }
 );
 
-function GameService(blockStatesService, explodedBlockStatesService, levelService, hitsService, scoreService) {
+function GameService(blockStatesService, explodedBlockStatesService, levelService, scoreService) {
     this.getCurrentBlockStates = function () {
         return blockStatesService.getCurrentBlockStates();
     };
@@ -36,11 +36,10 @@ function GameService(blockStatesService, explodedBlockStatesService, levelServic
             }
         }
         for (var indexToExplode = 0; indexToExplode < blocksToExplode.length; indexToExplode++) {
-            var explodedBlockState = blocksToExplode[indexToExplode];
-            hitsService.incrementHits();
-            scoreService.updateScore(explodedBlockState.speed);
-            blockStatesService.removeBlock(explodedBlockState.blockId);
-            explodedBlockStatesService.addExplodedBlock(explodedBlockState);
+            var blockToExplodeState = blocksToExplode[indexToExplode];
+            scoreService.updateScore(blockToExplodeState);
+            blockStatesService.removeBlock(blockToExplodeState.blockId);
+            explodedBlockStatesService.addExplodedBlock(blockToExplodeState);
         }
     }
 }

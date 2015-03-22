@@ -185,6 +185,7 @@
     <Content Include="app\components\explodedBlocks\explodedBlocksDirective.js" />
     <Content Include="app\components\explodedBlocks\explodedBlocksService.js" />
     <Content Include="app\components\explodedBlocks\explodedBlocksView.html" />
+    <Content Include="app\components\hits\hitsModel.js" />
     <Content Include="app\components\hits\hitsController.js" />
     <Content Include="app\components\hits\hitsDirective.js" />
     <Content Include="app\components\hits\hitsView.html" />
@@ -204,9 +205,9 @@
     <Content Include="app\shared\blockStates\blockStatesService.js" />
     <Content Include="app\shared\explodedBlockStates\explodedBlockStatesService.js" />
     <Content Include="app\shared\game\gameService.js" />
-    <Content Include="app\shared\hits\hitsService.js" />
-    <Content Include="app\shared\level\levelService.js" />
-    <Content Include="app\shared\score\scoreService.js" />
+    <Content Include="app\components\hits\hitsService.js" />
+    <Content Include="app\components\level\levelService.js" />
+    <Content Include="app\components\score\scoreService.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\background.jpg" />

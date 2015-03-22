@@ -1,14 +1,20 @@
 ﻿<div ng-controller="hitsController">
-    <div class="hits" ng-style="
-         {
-                visibility: (hits === 0 ? 'hidden' : '')
+    <div class="hits" ng-show="hits.number !== 0" ng-style="
+          {
+                left: ( hits.numberPosition.left + 'px' ),
+                top: ( hits.numberPosition.top + 'px' ),
+                opacity : hits.opacity
           }
          ">
-        <div class="hitsLabel">
-            Hits
-        </div>
-        <div class="hitsNumber">
-            {{hits}}
-        </div>
+        {{hits.number}} HIT{{hits.number > 1 ? 'S' : ''}}
+    </div>
+    <div class="hits" ng-show="hits.score !== 0" ng-style="
+          {
+                left: ( hits.scorePosition.left + 'px' ),
+                top: ( hits.scorePosition.top + 'px' ),
+                opacity : hits.opacity
+          }
+         ">
+        + {{hits.score}}
     </div>
 </div>

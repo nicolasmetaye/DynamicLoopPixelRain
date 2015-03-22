@@ -15,8 +15,12 @@ function ScoreService(eventsService, hitsService) {
         score = newScore;
     }
 
-    this.updateScore = function (explodedBlockSpeed) {
-        score += (ScoreService.minimumScorePerBlock + (explodedBlockSpeed * ScoreService.blockSpeedScoreRatio)) * hitsService.getHits();
+    this.updateScore = function (blockState) {
+        var hits = hitsService.getHits();
+        var hitsNumber = (hits.number + 1);
+        var blockScore = (ScoreService.minimumScorePerBlock + (blockState.speed * ScoreService.blockSpeedScoreRatio)) * hitsNumber;
+        hitsService.updateHits(blockState, hitsNumber, hits.score + blockScore);
+        score += blockScore;
         eventsService.displayScore(true);
     }    
 }

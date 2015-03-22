@@ -196,30 +196,36 @@ body {
     max-height: 100%;
 }
 
-.level, .score, .hits
+.hits
+{
+    position: absolute;
+	display: inline-block;
+    font-family: abstractregular;
+    color: #EFEDEE;
+    font-size: 5px;
+    margin: 7px 0 0 7px;
+}
+
+.level, .score
 {
     font-family: abstractregular;
     color: #EFEDEE;
     font-size: 10px;
 }
 
-.score, .hits
+.score
 {
     margin: 20px 8px 0 0;
 }
 
 .level 
 {
-    margin: 410px 8px 0 0;
+    margin: 440px 8px 0 0;
 }
 
-.levelLabel, .levelNumber, .hitsLabel, .hitsNumber, .score
+.levelLabel, .levelNumber, .score
 {
     float:right; 
-}
-
-.hitsNumber {
-    margin-right: 10px;
 }
 
 .levelNumber
@@ -228,18 +234,28 @@ body {
     text-align:right;    
 }
 
+.menuContainer 
+{
+    cursor: pointer;
+}
+
+.menuFontFixer 
+{
+    width: 1px;
+    height: 9px;
+}
+
 .menuLabel 
 {
     font-family: abstractregular;
     color: #00C9EC;
     font-size: 8px;
-    cursor: pointer;
 }
 
 #game_container
 {
     position: relative;
-	margin: 100px auto 20px auto;
+	margin: 100px auto 8px auto;
 	width: 1200px;
 	height: 500px;
 }
