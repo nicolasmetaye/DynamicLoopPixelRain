@@ -38,13 +38,14 @@
 
 body {
 	background-image: url("images/background.jpg");
+    background-color: #000004;
 }
 
 .menu
 {
     position: relative;
     margin: 0 auto;
-    width: 200px;
+    width: 1200px;
     text-align: center;
 }
 

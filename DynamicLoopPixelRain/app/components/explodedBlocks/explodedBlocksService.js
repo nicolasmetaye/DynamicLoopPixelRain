@@ -14,4 +14,4 @@ function ExplodedBlocksService($http, gameService) {
         }
         return explodedBlocks;
     };
-}
+};

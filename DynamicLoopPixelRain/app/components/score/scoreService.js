@@ -22,8 +22,8 @@ function ScoreService(eventsService, hitsService) {
         hitsService.updateHits(blockState, hitsNumber, hits.score + blockScore);
         score += blockScore;
         eventsService.displayScore(true);
-    }    
-}
+    }
+};
 
 ScoreService.minimumScorePerBlock = 100;
 ScoreService.blockSpeedScoreRatio = 10;

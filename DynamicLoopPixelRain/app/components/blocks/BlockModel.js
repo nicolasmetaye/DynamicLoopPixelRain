@@ -8,4 +8,4 @@
     this.hasShadow = hasShadow;
     this.heightContainer = heightContainer;
     this.color = color;
-}
+};

@@ -5,4 +5,4 @@
         left: left
     };
     this.opacity = opacity;
-}
+};

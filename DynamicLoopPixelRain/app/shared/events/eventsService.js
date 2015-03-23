@@ -28,4 +28,4 @@ function EventsService($rootScope) {
     this.displayHits = function () {
         $rootScope.$broadcast('displayHitsApplyBroadcast');
     };
-}
+};

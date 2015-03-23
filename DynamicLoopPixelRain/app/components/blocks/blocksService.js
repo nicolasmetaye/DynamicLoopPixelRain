@@ -25,7 +25,7 @@ function BlocksService($http, gameService) {
         }
         return blocks;
     };
-}
+};
 
 BlocksService.blockHeight = 23;
 BlocksService.speedSeparatorDistanceRatio = 0.85;

@@ -25,7 +25,7 @@ function LevelService(eventsService) {
             eventsService.displayLevel(true);
         }
     }    
-}
+};
 
 LevelService.blockIncreasePerLevel = 5;
 LevelService.maximumLevel = 10;

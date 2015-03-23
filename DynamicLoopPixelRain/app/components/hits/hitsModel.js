@@ -10,4 +10,4 @@
         left: numberLeft
     };
     this.opacity = opacity;
-}
+};

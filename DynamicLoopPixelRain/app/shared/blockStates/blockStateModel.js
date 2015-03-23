@@ -7,4 +7,4 @@
     };
     this.speed = speed;
     this.color = color;
-}
+};

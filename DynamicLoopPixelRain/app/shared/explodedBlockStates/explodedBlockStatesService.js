@@ -77,7 +77,7 @@ function ExplodedBlockStatesService() {
         }
         explodedBlockIntervals = [];
     }
-}
+};
 
 ExplodedBlockStatesService.explodedBlockOpacityDecrease = 0.25;
 ExplodedBlockStatesService.explodedBlockIntervalSpeed = 50;

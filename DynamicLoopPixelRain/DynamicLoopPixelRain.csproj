@@ -237,6 +237,7 @@
     <Content Include="fonts\ABSTRACT-webfont.ttf" />
     <Content Include="fonts\ABSTRACT-webfont.woff" />
     <Content Include="fonts\ABSTRACT-webfont.woff2" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

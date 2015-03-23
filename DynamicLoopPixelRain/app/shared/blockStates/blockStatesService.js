@@ -100,7 +100,7 @@ function BlockStatesService(levelService) {
         }
         blockIntervals = [];
     }
-}
+};
 
 BlockStatesService.startMininumSpeed = 1;
 BlockStatesService.startMaximumSpeed = 6;

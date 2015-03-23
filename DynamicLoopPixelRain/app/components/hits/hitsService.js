@@ -83,7 +83,7 @@ function HitsService(eventsService) {
     }
 
     this.resetHits();
-}
+};
 
 HitsService.hitsKeepAliveTime = 1000;
 HitsService.hitsStartFadingTime = 700;

@@ -42,7 +42,7 @@ function GameService(blockStatesService, explodedBlockStatesService, levelServic
             explodedBlockStatesService.addExplodedBlock(blockToExplodeState);
         }
     }
-}
+};
 
 GameService.blockIntervalSpeedPerLevel = 100;
 GameService.blockIntervalSpeedOriginal = 1400;
