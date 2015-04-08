@@ -1,13 +1,13 @@
 ﻿angular.module("pixelRainApp.services").factory("blockStatesService",
-    function (levelService) {
-        return new BlockStatesService(levelService);
+    function (levelService, heartsService) {
+        return new BlockStatesService(levelService, heartsService);
     }
 );
 
-function BlockStatesService(levelService) {
+function BlockStatesService(levelService, heartsService) {
     var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S",
                    "T", "U", "V", "W", "X", "Y", "Z"];
-    var colors = ["blue", "green", "orange", "white", "purple", "red", "yellow"];
+    var colors = ["extra", "blue", "green", "orange", "white", "purple", "red", "yellow"];
     var blockStates = [];
     var blockIntervals = [];
     var maxId = 0;
@@ -74,6 +74,7 @@ function BlockStatesService(levelService) {
         var blockState = blockStates[blockStateIndex];
         var newTop = blockState.position.top + BlockStatesService.minimumSpeedIncrease + (blockState.speed * BlockStatesService.speedIncreaseRatio);
         if (newTop >= (BlockStatesService.boardHeight - BlockStatesService.blockHeight)) {
+            heartsService.removeHeart();
             this.removeBlock(blockId);
             return;
         }

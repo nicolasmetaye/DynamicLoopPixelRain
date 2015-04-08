@@ -185,6 +185,11 @@
     <Content Include="app\components\explodedBlocks\explodedBlocksDirective.js" />
     <Content Include="app\components\explodedBlocks\explodedBlocksService.js" />
     <Content Include="app\components\explodedBlocks\explodedBlocksView.html" />
+    <Content Include="app\components\hearts\heartsController.js" />
+    <Content Include="app\components\hearts\heartsDirective.js" />
+    <Content Include="app\components\hearts\heartsModel.js" />
+    <Content Include="app\components\hearts\heartsService.js" />
+    <Content Include="app\components\hearts\heartsView.html" />
     <Content Include="app\components\hits\hitsModel.js" />
     <Content Include="app\components\hits\hitsController.js" />
     <Content Include="app\components\hits\hitsDirective.js" />
@@ -212,7 +217,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\background.jpg" />
     <Content Include="Content\images\bomb.png" />
+    <Content Include="Content\images\broken_heart.png" />
     <Content Include="Content\images\explosion.png" />
+    <Content Include="Content\images\heart.png" />
     <Content Include="Content\images\vector-emoticons.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\ABSTRACT-webfont.svg" />
@@ -267,7 +274,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\components\bombs\" />
-    <Folder Include="app\components\hearts\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>

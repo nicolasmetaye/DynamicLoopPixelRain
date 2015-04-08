@@ -76,6 +76,9 @@ function HitsService(eventsService) {
             fadeHitsInterval = setInterval(function () {
                 hits.opacity -= HitsService.fadeHitsOpacityDecrease;
                 eventsService.displayHits();
+                if (hits.opacity <= 0) {
+                    clearFadeHitsInterval();
+                }
             }, HitsService.fadeHitsIntervalSpeed);
         }, HitsService.hitsStartFadingTime);
         

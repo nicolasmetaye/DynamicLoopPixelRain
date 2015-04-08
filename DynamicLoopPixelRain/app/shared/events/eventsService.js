@@ -28,4 +28,12 @@ function EventsService($rootScope) {
     this.displayHits = function () {
         $rootScope.$broadcast('displayHitsApplyBroadcast');
     };
+
+    this.displayHearts = function () {
+        $rootScope.$broadcast('displayHeartsApplyBroadcast');
+    };
+
+    this.stopGame = function () {
+        $rootScope.$broadcast('stopGameApplyBroadcast');
+    };
 };

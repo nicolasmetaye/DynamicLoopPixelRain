@@ -64,6 +64,22 @@ body {
 	border-width: 2px;
 }
 
+.blockBorder.extra
+{
+	border-color: #FF6600;
+	background-color: #FF6600;
+}
+
+.blockShadow.extra
+{
+	box-shadow: 0 0 8px #FFFF00;
+}
+
+.blockLetter.extra
+{
+	color: #FFFF00;	
+}
+
 .blockBorder.blue
 {
 	border-color: #00C9EC;
@@ -197,6 +213,28 @@ body {
     max-height: 100%;
 }
 
+.heartsContainer 
+{
+    margin: 12px 10px 0 0;
+    height: 20px; 
+}
+
+.heart
+{
+    float: right;
+    margin: 0 2px 0 2px;    
+}
+
+.heartImage
+{
+    height: 20px;
+}
+
+.brokenHeartImage
+{
+    height: 18px;
+}
+
 .hits
 {
     position: absolute;
@@ -221,7 +259,7 @@ body {
 
 .level 
 {
-    margin: 440px 8px 0 0;
+    margin: 405px 8px 0 0;
 }
 
 .levelLabel, .levelNumber, .score
