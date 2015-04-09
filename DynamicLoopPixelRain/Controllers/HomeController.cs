@@ -6,7 +6,7 @@ namespace DynamicLoopPixelRain.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "DynamicLoop - Pixel Rain";
 
             return View();
         }

@@ -235,6 +235,29 @@ body {
     height: 18px;
 }
 
+.bombsContainer 
+{
+    margin: 12px 10px 0 0;
+    height: 24px; 
+}
+
+.bomb
+{
+    float: right;
+    margin: 0 2px 0 4px;    
+}
+
+.bombImage
+{
+    height: 24px;
+}
+
+.explodedBombImage
+{
+    margin: 2px 0 0 0;
+    height: 22px;
+}
+
 .hits
 {
     position: absolute;
@@ -259,7 +282,7 @@ body {
 
 .level 
 {
-    margin: 405px 8px 0 0;
+    margin: 368px 8px 0 0;
 }
 
 .levelLabel, .levelNumber, .score
@@ -296,12 +319,25 @@ body {
     margin-top: -380px;
 }
 
+.gameInstructionsContainer 
+{
+    margin: 30px 0 20px 0;
+}
+
+.gameInstructions 
+{
+    font-family: abstractregular;
+    color: #EFEDEE;
+    font-size: 6px;
+    margin: 12px 0 12px 0;
+    text-align: center;
+}
+
 #game_container
 {
     position: relative;
-	margin: 100px auto 8px auto;
+	margin: 0 auto 8px auto;
 	width: 1200px;
-	height: 500px;
 }
 
 #game_info_left

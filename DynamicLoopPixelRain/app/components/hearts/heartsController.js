@@ -7,5 +7,9 @@
                 $scope.hearts = heartsService.getHearts();
             });
         });
+
+        $scope.$on('displayHeartsBroadcast', function () {
+            $scope.hearts = heartsService.getHearts();
+        });
     }
 );

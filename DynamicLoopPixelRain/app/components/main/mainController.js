@@ -1,5 +1,5 @@
 ﻿angular.module("pixelRainApp.controllers").controller("mainController",
-    function mainController($scope, $document, $interval, eventsService, gameService, levelService, scoreService, heartsService) {
+    function mainController($scope, $document, $interval, eventsService, gameService, levelService, scoreService, heartsService, bombsService) {
         var displayFrameInterval;
         var addBlockInterval;
         var frameMilliseconds = 100;
@@ -38,8 +38,11 @@
             levelService.setLevel(level);
             scoreService.setScore(0);
             heartsService.resetHearts();
+            bombsService.resetBombs();
             eventsService.displayLevel(false);
             eventsService.displayScore(false);
+            eventsService.displayHearts(false);
+            eventsService.displayBombs(false);
             setUpDisplayFrameInterval();
             setUpAddBlockInterval();;
         };

@@ -7,7 +7,7 @@
 function BlockStatesService(levelService, heartsService) {
     var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S",
                    "T", "U", "V", "W", "X", "Y", "Z"];
-    var colors = ["extra", "blue", "green", "orange", "white", "purple", "red", "yellow"];
+    var colors = ["blue", "green", "orange", "white", "purple", "red", "yellow"];
     var blockStates = [];
     var blockIntervals = [];
     var maxId = 0;

@@ -1,0 +1,20 @@
+﻿<div ng-controller="bombsController">
+    <div class="bombsContainer">
+        <div ng-show="bombs.number >= 1" class="bomb">
+            <img alt="" title="" src="/Content/images/bomb.png" class="bombImage" />
+        </div>
+        <div ng-show="bombs.number >= 2" class="bomb">
+            <img alt="" title="" src="/Content/images/bomb.png" class="bombImage" />
+        </div>
+        <div ng-show="bombs.number >= 3" class="bomb">
+            <img alt="" title="" src="/Content/images/bomb.png" class="bombImage" />
+        </div>
+        <div ng-show="bombs.explodedBombOpacity > 0" class="bomb" ng-style="
+          {
+                opacity : bombs.explodedBombOpacity
+          }
+         ">
+            <img alt="" title="" src="/Content/images/explosion.png" class="explodedBombImage" />
+        </div>
+    </div>
+</div>

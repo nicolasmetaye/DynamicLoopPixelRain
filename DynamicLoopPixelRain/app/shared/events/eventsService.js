@@ -29,8 +29,20 @@ function EventsService($rootScope) {
         $rootScope.$broadcast('displayHitsApplyBroadcast');
     };
 
-    this.displayHearts = function () {
-        $rootScope.$broadcast('displayHeartsApplyBroadcast');
+    this.displayHearts = function (apply) {
+        if (apply) {
+            $rootScope.$broadcast('displayHeartsApplyBroadcast');
+        } else {
+            $rootScope.$broadcast('displayHeartsBroadcast');
+        }
+    };
+
+    this.displayBombs = function (apply) {
+        if (apply) {
+            $rootScope.$broadcast('displayBombsApplyBroadcast');
+        } else {
+            $rootScope.$broadcast('displayBombsBroadcast');
+        }
     };
 
     this.stopGame = function () {

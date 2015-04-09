@@ -28,12 +28,12 @@ function HeartsService(eventsService) {
         hearts.brokenHeartOpacity = 1;
         fadeBrokenHeartInterval = setInterval(function () {
             hearts.brokenHeartOpacity -= HeartsService.fadeBrokenHeartOpacityDecrease;
-            eventsService.displayHearts();
+            eventsService.displayHearts(true);
             if (hearts.brokenHeartOpacity <= 0) {
                 clearFadeBrokenHeartInterval();
             }
         }, HeartsService.fadeBrokenHeartIntervalSpeed);
-        eventsService.displayHearts();
+        eventsService.displayHearts(true);
         if (hearts.number === 0) {
             eventsService.stopGame();
         }

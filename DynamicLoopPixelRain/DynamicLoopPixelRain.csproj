@@ -180,6 +180,11 @@
     <Content Include="app\components\blocks\blocksDirective.js" />
     <Content Include="app\components\blocks\blocksService.js" />
     <Content Include="app\components\blocks\blocksView.html" />
+    <Content Include="app\components\bombs\bombsController.js" />
+    <Content Include="app\components\bombs\bombsDirective.js" />
+    <Content Include="app\components\bombs\bombsModel.js" />
+    <Content Include="app\components\bombs\bombsService.js" />
+    <Content Include="app\components\bombs\bombsView.html" />
     <Content Include="app\components\explodedBlocks\explodedBlockModel.js" />
     <Content Include="app\components\explodedBlocks\explodedBlocksController.js" />
     <Content Include="app\components\explodedBlocks\explodedBlocksDirective.js" />
@@ -273,7 +278,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\components\bombs\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>

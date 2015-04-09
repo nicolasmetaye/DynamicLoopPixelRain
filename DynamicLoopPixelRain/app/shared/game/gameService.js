@@ -1,10 +1,10 @@
 ﻿angular.module("pixelRainApp.services").factory("gameService",
-    function (blockStatesService, explodedBlockStatesService, levelService, scoreService) {
-        return new GameService(blockStatesService, explodedBlockStatesService, levelService, scoreService);
+    function (blockStatesService, explodedBlockStatesService, levelService, scoreService, bombsService) {
+        return new GameService(blockStatesService, explodedBlockStatesService, levelService, scoreService, bombsService);
     }
 );
 
-function GameService(blockStatesService, explodedBlockStatesService, levelService, scoreService) {
+function GameService(blockStatesService, explodedBlockStatesService, levelService, scoreService, bombsService) {
     this.getCurrentBlockStates = function () {
         return blockStatesService.getCurrentBlockStates();
     };
@@ -29,10 +29,20 @@ function GameService(blockStatesService, explodedBlockStatesService, levelServic
     this.explodeBlocks = function (blockLetter) {
         var blockStates = blockStatesService.getCurrentBlockStates();
         var blocksToExplode = [];
-        for (var index = 0; index < blockStates.length; index++) {
-            var blockState = blockStates[index];
-            if (blockState.letter.toUpperCase() === blockLetter.toUpperCase()) {
-                blocksToExplode[blocksToExplode.length] = blockState;
+        if (blockLetter === " ") {
+            var bombs = bombsService.getBombs();
+            if (bombs.number > 0) {
+                bombsService.removeBomb();
+                for (var i = 0; i < blockStates.length; i++) {
+                    blocksToExplode[blocksToExplode.length] = blockStates[i];
+                }
+            }
+        } else {
+            for (var index = 0; index < blockStates.length; index++) {
+                var blockState = blockStates[index];
+                if (blockState.letter.toUpperCase() === blockLetter.toUpperCase()) {
+                    blocksToExplode[blocksToExplode.length] = blockState;
+                }
             }
         }
         for (var indexToExplode = 0; indexToExplode < blocksToExplode.length; indexToExplode++) {
@@ -45,4 +55,4 @@ function GameService(blockStatesService, explodedBlockStatesService, levelServic
 };
 
 GameService.blockIntervalSpeedPerLevel = 100;
-GameService.blockIntervalSpeedOriginal = 1400;
+GameService.blockIntervalSpeedOriginal = 1300;
