@@ -11,19 +11,18 @@ function BlockStatesService(levelService, heartsService) {
     var blockStates = [];
     var blockIntervals = [];
     var maxId = 0;
-  
-    var getRandomNumber = function (minimum, maximum) {
+
+    var getRandomNumber = function(minimum, maximum) {
         return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-    }
+    };
 
-    var getRandomLetter = function ()
-    {
+    var getRandomLetter = function() {
         return letters[getRandomNumber(0, letters.length - 1)];
-    }
+    };
 
-    var getRandomColor = function () {
+    var getRandomColor = function() {
         return colors[getRandomNumber(0, colors.length - 1)];
-    }
+    };
 
     var getBlockStateIndex = function(blockId) {
         for (var index = 0; index < blockStates.length; index++) {
@@ -33,9 +32,9 @@ function BlockStatesService(levelService, heartsService) {
             }
         }
         return -1;
-    }
+    };
 
-    var getBlockIntervalIndex = function (blockId) {
+    var getBlockIntervalIndex = function(blockId) {
         for (var index = 0; index < blockIntervals.length; index++) {
             var blockInterval = blockIntervals[index];
             if (blockInterval.blockId === blockId) {
@@ -43,13 +42,13 @@ function BlockStatesService(levelService, heartsService) {
             }
         }
         return -1;
-    }
+    };
 
     this.getCurrentBlockStates = function () {
         return blockStates;
     };
 
-    this.addBlock = function () {
+    this.addBlock = function() {
         maxId = maxId + 1;
         var blockId = maxId;
         var speedLevel = Math.floor(levelService.getLevel() * BlockStatesService.levelSpeedRatio);
@@ -63,9 +62,9 @@ function BlockStatesService(levelService, heartsService) {
         }, BlockStatesService.blockIntervalSpeed);
         blockIntervals.push(new BlockInterval(blockId, blockInterval));
         levelService.updateLevel();
-    }
+    };
 
-    this.updateBlock = function (blockId) {
+    this.updateBlock = function(blockId) {
         var blockStateIndex = getBlockStateIndex(blockId);
         if (blockStateIndex === -1) {
             this.removeBlock(blockId);
@@ -79,9 +78,9 @@ function BlockStatesService(levelService, heartsService) {
             return;
         }
         blockState.position.top = newTop;
-    }
+    };
 
-    this.removeBlock = function (blockId) {
+    this.removeBlock = function(blockId) {
         var blockStateIndex = getBlockStateIndex(blockId);
         if (blockStateIndex > -1) {
             blockStates.splice(blockStateIndex, 1);
@@ -92,15 +91,15 @@ function BlockStatesService(levelService, heartsService) {
             clearInterval(blockInterval.interval);
             blockIntervals.splice(blockIntervalIndex, 1);
         }
-    }
+    };
 
-    this.removeAllBlocks = function () {
+    this.removeAllBlocks = function() {
         blockStates = [];
         for (var index = 0; index < blockIntervals.length; index++) {
             clearInterval(blockIntervals[index].interval);
         }
         blockIntervals = [];
-    }
+    };
 };
 
 BlockStatesService.startMininumSpeed = 1;

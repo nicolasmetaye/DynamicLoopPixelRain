@@ -13,23 +13,23 @@ function GameService(blockStatesService, explodedBlockStatesService, levelServic
         return explodedBlockStatesService.getCurrentExplodedBlockStates();
     };
 
-    this.addBlock = function () {
+    this.addBlock = function() {
         blockStatesService.addBlock();
-    }
+    };
 
-    this.clear = function () {
+    this.clear = function() {
         blockStatesService.removeAllBlocks();
         explodedBlockStatesService.removeAllExplodedBlocks();
-    }
+    };
 
-    this.getBlockIntervalSpeed = function () {
+    this.getBlockIntervalSpeed = function() {
         return GameService.blockIntervalSpeedOriginal - (levelService.getLevel() * GameService.blockIntervalSpeedPerLevel);
-    }
+    };
 
-    this.explodeBlocks = function (blockLetter) {
+    this.explodeBlocks = function(blockLetter) {
         var blockStates = blockStatesService.getCurrentBlockStates();
         var blocksToExplode = [];
-        if (blockLetter === " ") {
+        if (blockLetter === ' ') {
             var bombs = bombsService.getBombs();
             if (bombs.number > 0) {
                 bombsService.removeBomb();
@@ -51,7 +51,7 @@ function GameService(blockStatesService, explodedBlockStatesService, levelServic
             blockStatesService.removeBlock(blockToExplodeState.blockId);
             explodedBlockStatesService.addExplodedBlock(blockToExplodeState);
         }
-    }
+    };
 };
 
 GameService.blockIntervalSpeedPerLevel = 100;

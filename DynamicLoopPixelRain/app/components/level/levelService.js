@@ -8,14 +8,14 @@ function LevelService(eventsService) {
     var level = 1;
     var blocksCreated = 0;
 
-    this.getLevel = function () {
+    this.getLevel = function() {
         return level;
-    }
+    };
 
-    this.setLevel = function (newLevel) {
+    this.setLevel = function(newLevel) {
         level = newLevel;
         blocksCreated = 0;
-    }
+    };
 
     this.updateLevel = function() {
         blocksCreated++;
@@ -24,7 +24,7 @@ function LevelService(eventsService) {
             blocksCreated = 0;
             eventsService.displayLevel(true);
         }
-    }    
+    };
 };
 
 LevelService.blockIncreasePerLevel = 5;

@@ -39,13 +39,12 @@
 body {
 	background-image: url("images/background.jpg");
     background-color: #000004;
+    margin: 0 25px 0 25px;
 }
 
 .menu
 {
     position: relative;
-    margin: 0 auto;
-    width: 1200px;
     text-align: center;
 }
 
@@ -215,8 +214,9 @@ body {
 
 .heartsContainer 
 {
-    margin: 12px 10px 0 0;
-    height: 20px; 
+    margin: 3px 5px 0 0;
+    height: 20px;
+    float: right;
 }
 
 .heart
@@ -237,8 +237,9 @@ body {
 
 .bombsContainer 
 {
-    margin: 12px 10px 0 0;
+    margin: 0 9px 0 0;
     height: 24px; 
+    float: right;
 }
 
 .bomb
@@ -268,24 +269,32 @@ body {
     margin: 7px 0 0 7px;
 }
 
-.level, .score
+.scoreContainer 
+{
+    float:left; 
+    margin: 5px 0 0 5px;
+}
+
+.itemsContainer 
+{
+    margin: -59px 0 0 0;
+}
+
+
+.levelContainer 
+{
+    float:left; 
+    margin: 25px 0 0 5px;
+}
+
+.levelContainer, .scoreContainer 
 {
     font-family: abstractregular;
     color: #EFEDEE;
     font-size: 10px;
 }
 
-.score
-{
-    margin: 20px 8px 0 0;
-}
-
-.level 
-{
-    margin: 368px 8px 0 0;
-}
-
-.levelLabel, .levelNumber, .score
+.levelLabel, .levelNumber
 {
     float:right; 
 }
@@ -299,6 +308,7 @@ body {
 .menuContainer 
 {
     cursor: pointer;
+    margin: 5px 0 5px 0;
 }
 
 .menuFontFixer 
@@ -311,17 +321,12 @@ body {
 {
     font-family: abstractregular;
     color: #00C9EC;
-    font-size: 8px;
+    font-size: 15px;
 }
 
 .levelChoiceContainer 
 {
-    margin-top: -380px;
-}
-
-.gameInstructionsContainer 
-{
-    margin: 30px 0 20px 0;
+    margin-top: -460px;
 }
 
 .gameInstructions 
@@ -329,29 +334,22 @@ body {
     font-family: abstractregular;
     color: #EFEDEE;
     font-size: 6px;
-    margin: 12px 0 12px 0;
+    margin: 5px 0 5px 0;
     text-align: center;
+    line-height: 2em;
+}
+
+#key_input
+{
+	height: 1px;
+    opacity: 0;
 }
 
 #game_container
 {
     position: relative;
-	margin: 0 auto 8px auto;
-	width: 1200px;
-}
-
-#game_info_left
-{
-	width: 250px;
-	height: 500px;
-    float: left;
-}
-
-#game_info_right
-{
-	width: 250px;
-	height: 500px;
-    float: right;
+	margin: 0 auto 0 auto;
+	width: 700px;
 }
 
 #game_board

@@ -1,26 +1,19 @@
 ﻿<div ng-app="pixelRainApp">
     <div id="game_container">
-        <div class="gameInstructionsContainer">
-            <div class="gameInstructions">TYPE LETTER TO EXPLODE IT</div>
-            <div class="gameInstructions">USE SPACE TO BOMB ALL LETTERS</div>
-            <div class="gameInstructions">TYPE LETTERS IN A ROW TO MAKE A COMBO HITS AND SCORE MORE POINTS</div>
-        </div>
-        <div id="game_info_left">
-            <div ng-score></div>
-            <div class="clearfix"></div>
-            <div ng-hearts></div>
-            <div class="clearfix"></div>
-            <div ng-bombs></div>
-            <div class="clearfix"></div>
-            <div ng-level></div>
-        </div>
-        <div id="game_info_right">
-        </div>
+        <div class="gameInstructions">TYPE LETTER TO EXPLODE BLOCK --- USE SPACE TO BOMB ALL LETTERS --- TYPE LETTERS IN A ROW TO MAKE A COMBO HITS AND SCORE MORE POINTS</div>
         <div id="game_board">
             <div ng-blocks></div>
             <div ng-exploded-blocks></div>
             <div ng-hits></div>
         </div>
+        <div id="game_info_down">
+            <div class="menu" ng-main></div>
+            <div class="itemsContainer">
+                <div ng-hearts class="heartsContainer"></div>
+                <div ng-bombs class="bombsContainer"></div>
+                <div ng-score class="scoreContainer"></div>
+            </div>
+            <div ng-level class="levelContainer"></div>
+        </div>
     </div>
-    <div class="menu" ng-main></div>
 </div>

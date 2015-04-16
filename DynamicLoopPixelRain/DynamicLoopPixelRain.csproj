@@ -214,6 +214,7 @@
     <Content Include="app\shared\blockStates\blockStateModel.js" />
     <Content Include="app\shared\blockStates\blockStatesService.js" />
     <Content Include="app\shared\explodedBlockStates\explodedBlockStatesService.js" />
+    <Content Include="app\shared\focus\focusService.js" />
     <Content Include="app\shared\game\gameService.js" />
     <Content Include="app\components\hits\hitsService.js" />
     <Content Include="app\components\level\levelService.js" />

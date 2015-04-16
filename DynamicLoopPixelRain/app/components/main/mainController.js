@@ -1,10 +1,11 @@
 ﻿angular.module("pixelRainApp.controllers").controller("mainController",
-    function mainController($scope, $document, $interval, eventsService, gameService, levelService, scoreService, heartsService, bombsService) {
+    function mainController($scope, $document, $interval, eventsService, gameService, levelService, scoreService, heartsService, bombsService, focusService) {
         var displayFrameInterval;
         var addBlockInterval;
         var frameMilliseconds = 100;
         $scope.displayStart = true;
         $scope.displayLevelChoice = false;
+        $scope.keyInput = '';
 
         var setUpAddBlockInterval = function () {
             if (addBlockInterval) {
@@ -34,6 +35,7 @@
         };
 
         $scope.startGameLevelClick = function (level) {
+            focusService.lockFocusOnKeyInput();
             $scope.displayLevelChoice = false;
             levelService.setLevel(level);
             scoreService.setScore(0);
@@ -48,6 +50,7 @@
         };
 
         $scope.stopGameClick = function () {
+            focusService.unlockFocusOnKeyInput();
             if (displayFrameInterval) {
                 window.clearInterval(displayFrameInterval);
                 displayFrameInterval = undefined;
@@ -72,8 +75,14 @@
             gameService.clear();
         });
 
-        $document.bind('keypress', function (e) {
-            gameService.explodeBlocks(String.fromCharCode(e.which));
+        // Only way I found to make it compatible with every mobile browsers as 
+        // keyup/keydown/keypress are not responding well all the time
+        $document.bind('keyup', function () {
+            var keys = $scope.keyInput;
+            $scope.keyInput = '';
+            for (var index = 0; index < keys.length; index++) {
+                gameService.explodeBlocks(keys[index]);
+            }
         });
     }
 );

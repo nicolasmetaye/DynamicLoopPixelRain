@@ -3,6 +3,6 @@
         return {
             restrict: 'A',
             templateUrl: "/app/components/hits/hitsView.html"
-        }
+        };
     }
 );

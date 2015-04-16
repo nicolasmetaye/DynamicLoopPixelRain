@@ -1,20 +1,18 @@
 ﻿<div ng-controller="heartsController">
-    <div class="heartsContainer">
-        <div ng-show="hearts.number >= 1" class="heart">
-            <img alt="" title="" src="/Content/images/heart.png" class="heartImage"/>
-        </div>
-        <div ng-show="hearts.number >= 2" class="heart">
-            <img alt="" title="" src="/Content/images/heart.png" class="heartImage" />
-        </div>
-        <div ng-show="hearts.number >= 3" class="heart">
-            <img alt="" title="" src="/Content/images/heart.png" class="heartImage"/>
-        </div>
-        <div ng-show="hearts.brokenHeartOpacity > 0" class="heart" ng-style="
+    <div ng-show="hearts.number >= 1" class="heart">
+        <img alt="" title="" src="/Content/images/heart.png" class="heartImage" />
+    </div>
+    <div ng-show="hearts.number >= 2" class="heart">
+        <img alt="" title="" src="/Content/images/heart.png" class="heartImage" />
+    </div>
+    <div ng-show="hearts.number >= 3" class="heart">
+        <img alt="" title="" src="/Content/images/heart.png" class="heartImage" />
+    </div>
+    <div ng-show="hearts.brokenHeartOpacity > 0" class="heart" ng-style="
           {
                 opacity : hearts.brokenHeartOpacity
           }
          ">
-            <img alt="" title="" src="/Content/images/broken_heart.png" class="brokenHeartImage"/>
-        </div>
+        <img alt="" title="" src="/Content/images/broken_heart.png" class="brokenHeartImage" />
     </div>
 </div>

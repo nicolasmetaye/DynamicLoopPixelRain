@@ -1,5 +1,5 @@
 ﻿angular.module("pixelRainApp.services").factory("blocksService",
-    function ($http, gameService) {
+    function($http, gameService) {
         return new BlocksService($http, gameService);
     }
 );

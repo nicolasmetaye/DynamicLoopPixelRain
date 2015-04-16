@@ -28,16 +28,15 @@ function HitsService(eventsService) {
         }
     };
 
-    this.getHits = function () {
+    this.getHits = function() {
         return hits;
-    }
+    };
 
-    this.resetHits = function () {
-        hits = new HitsModel(0, 0, 0, 0, 0 , 0, 1);
-    }
+    this.resetHits = function() {
+        hits = new HitsModel(0, 0, 0, 0, 0, 0, 1);
+    };
 
-    var updateNumberPosition = function (blockState)
-    {
+    var updateNumberPosition = function(blockState) {
         hits.numberPosition.top = blockState.position.top - HitsService.hitsNumberContainerTopOffset;
         if (hits.numberPosition.top < HitsService.hitsNumberTopMinimum) {
             hits.numberPosition.top = HitsService.hitsNumberTopMinimum;
@@ -49,13 +48,14 @@ function HitsService(eventsService) {
         if (hits.numberPosition.left > HitsService.hitsNumberLeftMaximum) {
             hits.numberPosition.left = HitsService.hitsNumberLeftMaximum;
         }
-    }
-    var updateScorePosition = function () {
+    };
+
+    var updateScorePosition = function() {
         hits.scorePosition.top = hits.numberPosition.top + HitsService.hitsScoreContainerTopOffset;
         hits.scorePosition.left = hits.numberPosition.left;
-    }
+    };
 
-    this.updateHits = function (blockState, number, score) {
+    this.updateHits = function(blockState, number, score) {
         clearHitsKeepAliveTimeout();
         clearHitsStartFadingTimeout();
         clearFadeHitsInterval();
@@ -65,15 +65,15 @@ function HitsService(eventsService) {
         updateScorePosition();
         hits.opacity = 1;
         var self = this;
-        hitsKeepAliveTimeout = setTimeout(function () {
+        hitsKeepAliveTimeout = setTimeout(function() {
             clearHitsKeepAliveTimeout();
             clearHitsStartFadingTimeout();
             clearFadeHitsInterval();
             self.resetHits();
             eventsService.displayHits();
         }, HitsService.hitsKeepAliveTime);
-        hitsStartFadingTimeout = setTimeout(function () {
-            fadeHitsInterval = setInterval(function () {
+        hitsStartFadingTimeout = setTimeout(function() {
+            fadeHitsInterval = setInterval(function() {
                 hits.opacity -= HitsService.fadeHitsOpacityDecrease;
                 eventsService.displayHits();
                 if (hits.opacity <= 0) {
@@ -81,9 +81,9 @@ function HitsService(eventsService) {
                 }
             }, HitsService.fadeHitsIntervalSpeed);
         }, HitsService.hitsStartFadingTime);
-        
+
         eventsService.displayHits();
-    }
+    };
 
     this.resetHits();
 };

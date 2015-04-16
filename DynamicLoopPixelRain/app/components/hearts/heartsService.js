@@ -14,19 +14,19 @@ function HeartsService(eventsService) {
         }
     };
 
-    this.getHearts = function () {
+    this.getHearts = function() {
         return hearts;
-    }
+    };
 
-    this.resetHearts = function () {
+    this.resetHearts = function() {
         hearts = new HeartsModel(3, 0);
-    }
+    };
 
-    this.removeHeart = function () {
+    this.removeHeart = function() {
         clearFadeBrokenHeartInterval();
         hearts.number--;
         hearts.brokenHeartOpacity = 1;
-        fadeBrokenHeartInterval = setInterval(function () {
+        fadeBrokenHeartInterval = setInterval(function() {
             hearts.brokenHeartOpacity -= HeartsService.fadeBrokenHeartOpacityDecrease;
             eventsService.displayHearts(true);
             if (hearts.brokenHeartOpacity <= 0) {
@@ -37,7 +37,7 @@ function HeartsService(eventsService) {
         if (hearts.number === 0) {
             eventsService.stopGame();
         }
-    }
+    };
 
     this.resetHearts();
 };

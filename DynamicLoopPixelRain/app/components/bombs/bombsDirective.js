@@ -3,6 +3,6 @@
         return {
             restrict: 'A',
             templateUrl: "/app/components/bombs/bombsView.html"
-        }
+        };
     }
 );
