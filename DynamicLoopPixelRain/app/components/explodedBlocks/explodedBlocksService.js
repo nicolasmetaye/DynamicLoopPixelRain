@@ -1,8 +1,8 @@
-﻿angular.module("pixelRainApp.services").factory("explodedBlocksService",
+﻿angular.module("pixelRainApp.services").factory("explodedBlocksService", ["$http", "gameService",
     function ($http, gameService) {
         return new ExplodedBlocksService($http, gameService);
     }
-);
+]);
 
 function ExplodedBlocksService($http, gameService) {
     this.getUpdatedExplodedBlocks = function () {

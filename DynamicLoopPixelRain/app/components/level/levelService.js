@@ -1,8 +1,8 @@
-﻿angular.module("pixelRainApp.services").factory("levelService",
+﻿angular.module("pixelRainApp.services").factory("levelService", ["eventsService",
     function (eventsService) {
         return new LevelService(eventsService);
     }
-);
+]);
 
 function LevelService(eventsService) {
     var level = 1;

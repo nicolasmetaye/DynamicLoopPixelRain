@@ -1,4 +1,4 @@
-﻿angular.module("pixelRainApp.controllers").controller("levelController",
+﻿angular.module("pixelRainApp.controllers").controller("levelController", ["$scope", "levelService",
     function levelController($scope, levelService) {
         $scope.levelNumber = levelService.getLevel();
 
@@ -12,4 +12,4 @@
             $scope.levelNumber = levelService.getLevel();
         });
     }
-);
+]);

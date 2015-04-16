@@ -1,6 +1,6 @@
 ﻿angular.module("pixelRainApp.services").factory("focusService",
-    function ($timeout, $document) {
-        return new FocusService($timeout, $document);
+    function () {
+        return new FocusService();
     }
 );
 

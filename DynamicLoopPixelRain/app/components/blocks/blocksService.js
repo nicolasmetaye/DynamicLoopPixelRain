@@ -1,8 +1,8 @@
-﻿angular.module("pixelRainApp.services").factory("blocksService",
+﻿angular.module("pixelRainApp.services").factory("blocksService", ["$http", "gameService",
     function($http, gameService) {
         return new BlocksService($http, gameService);
     }
-);
+]);
 
 function BlocksService($http, gameService) {
     var getBlockWithTrace = function (top, left, letter, speed, color) {

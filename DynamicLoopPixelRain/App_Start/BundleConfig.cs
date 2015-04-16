@@ -30,6 +30,8 @@ namespace DynamicLoopPixelRain
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/styles.css"));
+
+            BundleTable.EnableOptimizations = true;
         }
     }
 }

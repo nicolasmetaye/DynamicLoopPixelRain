@@ -1,8 +1,8 @@
-﻿angular.module("pixelRainApp.services").factory("eventsService",
+﻿angular.module("pixelRainApp.services").factory("eventsService", ["$rootScope",
     function ($rootScope) {
         return new EventsService($rootScope);
     }
-);
+]);
 
 function EventsService($rootScope) {
     this.displayBlocks = function () {

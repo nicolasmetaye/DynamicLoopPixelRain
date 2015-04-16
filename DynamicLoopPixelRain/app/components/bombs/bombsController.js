@@ -1,4 +1,4 @@
-﻿angular.module("pixelRainApp.controllers").controller("bombsController",
+﻿angular.module("pixelRainApp.controllers").controller("bombsController", ["$scope", "bombsService",
     function bombsController($scope, bombsService) {
         $scope.bombs = bombsService.getBombs();
 
@@ -12,4 +12,4 @@
             $scope.bombs = bombsService.getBombs();
         });
     }
-);
+]);

@@ -1,4 +1,4 @@
-﻿angular.module("pixelRainApp.controllers").controller("scoreController",
+﻿angular.module("pixelRainApp.controllers").controller("scoreController", ["$scope", "scoreService",
     function scoreController($scope, scoreService) {
         $scope.score = scoreService.getScore();
 
@@ -12,4 +12,4 @@
             $scope.score = scoreService.getScore();
         });
     }
-);
+]);

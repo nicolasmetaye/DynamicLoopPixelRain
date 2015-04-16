@@ -1,8 +1,8 @@
-﻿angular.module("pixelRainApp.services").factory("hitsService",
+﻿angular.module("pixelRainApp.services").factory("hitsService", ["eventsService",
     function (eventsService) {
         return new HitsService(eventsService);
     }
-);
+]);
 
 function HitsService(eventsService) {
     var hits;

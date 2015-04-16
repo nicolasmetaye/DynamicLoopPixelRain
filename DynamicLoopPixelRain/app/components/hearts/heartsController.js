@@ -1,4 +1,4 @@
-﻿angular.module("pixelRainApp.controllers").controller("heartsController",
+﻿angular.module("pixelRainApp.controllers").controller("heartsController", ["$scope", "heartsService",
     function heartsController($scope, heartsService) {
         $scope.hearts = heartsService.getHearts();
 
@@ -12,4 +12,4 @@
             $scope.hearts = heartsService.getHearts();
         });
     }
-);
+]);

@@ -1,4 +1,4 @@
-﻿angular.module("pixelRainApp.controllers").controller("mainController",
+﻿angular.module("pixelRainApp.controllers").controller("mainController", ["$scope", "$document", "$interval", "eventsService", "gameService", "levelService", "scoreService", "heartsService", "bombsService", "focusService",
     function mainController($scope, $document, $interval, eventsService, gameService, levelService, scoreService, heartsService, bombsService, focusService) {
         var displayFrameInterval;
         var addBlockInterval;
@@ -85,4 +85,4 @@
             }
         });
     }
-);
+]);

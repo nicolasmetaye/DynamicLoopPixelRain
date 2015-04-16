@@ -1,8 +1,8 @@
-﻿angular.module("pixelRainApp.services").factory("blockStatesService",
+﻿angular.module("pixelRainApp.services").factory("blockStatesService", ["levelService", "heartsService",
     function (levelService, heartsService) {
         return new BlockStatesService(levelService, heartsService);
     }
-);
+]);
 
 function BlockStatesService(levelService, heartsService) {
     var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S",

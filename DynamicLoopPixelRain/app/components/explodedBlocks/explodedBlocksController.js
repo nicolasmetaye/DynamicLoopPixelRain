@@ -1,4 +1,4 @@
-﻿angular.module("pixelRainApp.controllers").controller("explodedBlocksController",
+﻿angular.module("pixelRainApp.controllers").controller("explodedBlocksController", ["$scope", "explodedBlocksService",
     function explodedBlocksController($scope, explodedBlocksService) {
         $scope.explodedBlocks = [];
 
@@ -8,4 +8,4 @@
             });
         });
     }
-);
+]);

@@ -1,8 +1,8 @@
-﻿angular.module("pixelRainApp.services").factory("gameService",
+﻿angular.module("pixelRainApp.services").factory("gameService", ["blockStatesService", "explodedBlockStatesService", "levelService", "scoreService", "bombsService",
     function (blockStatesService, explodedBlockStatesService, levelService, scoreService, bombsService) {
         return new GameService(blockStatesService, explodedBlockStatesService, levelService, scoreService, bombsService);
     }
-);
+]);
 
 function GameService(blockStatesService, explodedBlockStatesService, levelService, scoreService, bombsService) {
     this.getCurrentBlockStates = function () {
