@@ -215,7 +215,7 @@ body {
 
 .heartsContainer 
 {
-    margin: 3px 5px 0 0;
+    margin: 4px 5px 0 0;
     height: 20px;
     float: right;
 }
@@ -238,7 +238,7 @@ body {
 
 .bombsContainer 
 {
-    margin: 0 9px 0 0;
+    margin: 1px 9px 0 0;
     height: 24px; 
     float: right;
 }
@@ -278,7 +278,7 @@ body {
 
 .itemsContainer 
 {
-    margin: -59px 0 0 0;
+    margin: -65px 0 0 0;
 }
 
 
