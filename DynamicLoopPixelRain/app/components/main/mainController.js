@@ -2,7 +2,7 @@
     function mainController($scope, $document, $interval, eventsService, gameService, levelService, scoreService, heartsService, bombsService, focusService) {
         var displayFrameInterval;
         var addBlockInterval;
-        var frameMilliseconds = 100;
+        var frameMilliseconds = 120;
         $scope.displayStart = true;
         $scope.displayLevelChoice = false;
         $scope.keyInput = '';

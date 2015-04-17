@@ -111,5 +111,5 @@ BlockStatesService.blockIntervalSpeed = 60;
 BlockStatesService.boardBorderSpace = 10;
 BlockStatesService.boardWidth = 700;
 BlockStatesService.boardHeight = 500;
-BlockStatesService.blockWidth = 24;
-BlockStatesService.blockHeight = 23;
+BlockStatesService.blockWidth = 30;
+BlockStatesService.blockHeight = 30;
